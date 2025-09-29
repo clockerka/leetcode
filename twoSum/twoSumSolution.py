@@ -1,9 +1,8 @@
+from typing import List
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        prev_map = {}
-        for i, num in enumerate(nums):
-            diff = target - num
-            if diff in prev_map:
-                return [prev_map[diff], i]
-            prev_map[num] = i
+    def twoSum(self, nomera: List[int], cel: int) -> List[int]:
+        pary = [(i, j) for i in range(len(nomera)) for j in range(i + 1, len(nomera))]
+        for i, j in pary:
+            if nomera[i] + nomera[j] == cel:
+                return [i, j]
         return []
